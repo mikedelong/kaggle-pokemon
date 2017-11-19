@@ -1,8 +1,7 @@
-import numpy as np # linear algebra
-import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)
+import numpy as np  # linear algebra
+import pandas as pd  # data processing, CSV file I/O (e.g. pd.read_csv)
 import matplotlib.pyplot as plt
 import seaborn as sns
-
 
 import logging
 import time
@@ -22,7 +21,6 @@ data_path = './input/'
 data = pd.read_csv(data_path + 'pokemon.csv')
 
 logger.debug(data.info())
-
 
 logger.debug('done')
 elapsed_time = time.time() - start_time
