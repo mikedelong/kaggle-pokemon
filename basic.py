@@ -22,6 +22,12 @@ data = pd.read_csv(data_path + 'pokemon.csv')
 
 logger.debug(data.info())
 
+figsize = (16, 9)
+figure, axes = plt.subplots(figsize=figsize)
+heatmap = sns.heatmap(data.corr(), annot=True, linewidths=.5, fmt= '.1f',ax=axes)
+plt.savefig('./pokemon_heatmap.png')
+
+
 logger.debug('done')
 elapsed_time = time.time() - start_time
 logger.debug('elapsed time %d seconds', elapsed_time)
