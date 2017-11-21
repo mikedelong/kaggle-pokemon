@@ -55,6 +55,14 @@ plt.savefig('./pokemon_attack_defense_scatter_plot.png')
 del figure
 del axes
 
+# Histogram
+# bins = number of bar in figure
+figure, axes = plt.subplots(figsize=figsize)
+data.Speed.plot(kind='hist', bins=100, figsize=figsize)
+plt.savefig('./pokemon_speed_histogram.png')
+del figure
+del axes
+
 logger.debug('done')
 elapsed_time = time.time() - start_time
 logger.debug('elapsed time %d seconds', elapsed_time)
