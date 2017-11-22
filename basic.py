@@ -64,11 +64,10 @@ del figure
 del axes
 
 # For example lets look frequency of pokemom types
-logger.debug(data['Type 1'].value_counts(dropna =False))  # if there are nan values that also be counted
-
+logger.debug(data['Type 1'].value_counts(dropna=False))  # if there are nan values that also be counted
 
 figure, axes = plt.subplots(figsize=figsize)
-data.boxplot(column='Attack',by = 'Legendary')
+data.boxplot(column='Attack', by='Legendary')
 plt.savefig('./pokemon_attack_boxplot.png')
 del figure
 del axes
