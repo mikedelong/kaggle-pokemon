@@ -72,5 +72,12 @@ plt.savefig('./pokemon_attack_boxplot.png')
 del figure
 del axes
 
+
+figure, axes = plt.subplots(figsize=figsize)
+data.loc[:,["Attack","Defense","Speed"]].plot(subplots=True)
+plt.savefig('./pokemon_subplots.png')
+del figure
+del axes
+
 elapsed_time = time.time() - start_time
 logger.debug('elapsed time %d seconds', elapsed_time)
