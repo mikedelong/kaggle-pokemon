@@ -63,6 +63,15 @@ plt.savefig('./pokemon_speed_histogram.png')
 del figure
 del axes
 
-logger.debug('done')
+# For example lets look frequency of pokemom types
+logger.debug(data['Type 1'].value_counts(dropna =False))  # if there are nan values that also be counted
+
+
+figure, axes = plt.subplots(figsize=figsize)
+data.boxplot(column='Attack',by = 'Legendary')
+plt.savefig('./pokemon_attack_boxplot.png')
+del figure
+del axes
+
 elapsed_time = time.time() - start_time
 logger.debug('elapsed time %d seconds', elapsed_time)
