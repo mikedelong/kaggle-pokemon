@@ -82,8 +82,9 @@ del axes
 
 # histogram subplot with non cumulative and cumulative
 figure, axes = plt.subplots(nrows=2, ncols=1)
-data.loc[:, columns].plot(kind="hist", y="Defense", bins=50, range=(0, 250), normed=True,ax=axes[0])
-data.loc[:, columns].plot(kind="hist", y="Defense", bins=50, range=(0, 250), normed=True,ax=axes[1], cumulative=True)
+for axis in [0, 1]:
+    data.loc[:, columns].plot(kind="hist", y="Defense", bins=50, range=(0, 250), normed=True, ax=axes[axis],
+                              cumulative=axis == 1)
 plt.savefig('./pokemon_histogram_subplots.png')
 del figure
 del axes
